@@ -1027,3 +1027,363 @@ body::before {
     justify-content: flex-start;
   }
 }
+
+/* Tablet and smaller laptops */
+@media (max-width: 1200px) {
+  .app-shell {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .main-dashboard,
+  .agent-info-dashboard {
+    padding: 1.5rem;
+  }
+
+  .hero {
+    padding: 2.5rem 2rem;
+  }
+
+  .agentinfo-title {
+    font-size: 2.2rem;
+  }
+
+  .agentinfo-id {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 1024px) {
+  .metrics-grid,
+  .main-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-section {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-info-header {
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+  }
+
+  .agent-info-title {
+    grid-column: 1 / -1;
+    order: 1;
+  }
+
+  .dashboard-btn {
+    order: 2;
+  }
+
+  .user-info {
+    order: 3;
+  }
+
+  .eyebrow {
+    font-size: 2.5em;
+  }
+
+  .main-dashboard-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .user-info-header {
+    align-self: center;
+  }
+
+  /* Make table scrollable on tablets */
+  .agents-table-container {
+    overflow-x: auto;
+  }
+
+  .agents-table {
+    min-width: 600px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .app-shell {
+    padding: 1.5rem 1rem 2.5rem;
+    gap: 1.5rem;
+  }
+
+  .hero,
+  .detail-view {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .eyebrow {
+    font-size: 2em;
+  }
+
+  .agentinfo-header {
+    padding: 1.5rem;
+  }
+
+  .agentinfo-title {
+    font-size: 1.8rem;
+  }
+
+  .agentinfo-id {
+    font-size: 1.4em;
+  }
+
+  .main-search-form {
+    max-width: 100%;
+  }
+
+  .main-search-input {
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .main-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .main-metric-value {
+    font-size: 1.6rem;
+  }
+
+  .agents-list-title {
+    font-size: 1.5rem;
+  }
+
+  .agent-search-form {
+    max-width: 100%;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .transaction-number {
+    min-width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .transaction-arrow {
+    display: none;
+  }
+
+  .cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .solid-btn,
+  .ghost-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 1rem 0.75rem 2rem;
+  }
+
+  .hero {
+    padding: 1.5rem 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .eyebrow {
+    font-size: 1.6em;
+  }
+
+  .agentinfo-header {
+    padding: 1.25rem;
+  }
+
+  .agentinfo-title {
+    font-size: 1.5rem;
+    letter-spacing: 0.08em;
+  }
+
+  .agentinfo-id {
+    font-size: 1.2em;
+  }
+
+  .agent-info-header {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .agent-info-title {
+    order: 2;
+  }
+
+  .dashboard-btn {
+    order: 1;
+    justify-self: start;
+  }
+
+  .user-info {
+    order: 3;
+    justify-self: center;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .metric-value {
+    font-size: 1.5rem;
+  }
+
+  .detail-headline {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .detail-headline .ghost-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .detail-card {
+    padding: 1.25rem;
+  }
+
+  .detail-card dl {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .history-card ul li {
+    flex-direction: column;
+    padding: 0.875rem;
+  }
+
+  .history-stats {
+    align-items: flex-start;
+  }
+
+  .main-dashboard,
+  .agent-info-dashboard {
+    padding: 1rem;
+  }
+
+  .main-dashboard-header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .main-dashboard-title {
+    font-size: 1.75rem;
+  }
+
+  .main-metric-card {
+    padding: 1.25rem;
+  }
+
+  .agents-table th,
+  .agents-table td {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .search-panel {
+    padding: 1.25rem;
+  }
+
+  .search-input-row {
+    flex-direction: column;
+  }
+
+  .search-input-row input {
+    min-width: 100%;
+  }
+
+  .panel {
+    padding: 1.25rem;
+  }
+
+  .chart-container,
+  .placeholder-container {
+    padding: 1.25rem;
+    min-height: 300px;
+  }
+
+  .transaction-label {
+    min-width: 80px;
+    font-size: 0.8rem;
+  }
+
+  .transaction-value {
+    font-size: 0.9rem;
+  }
+
+  .transaction-value-small {
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .eyebrow {
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+  }
+
+  .agentinfo-title {
+    font-size: 1.3rem;
+  }
+
+  .agentinfo-id {
+    font-size: 1em;
+  }
+
+  .hero {
+    padding: 1.25rem 1rem;
+  }
+
+  .main-dashboard-title {
+    font-size: 1.5rem;
+  }
+
+  .agents-list-title {
+    font-size: 1.3rem;
+  }
+
+  .solid-btn,
+  .ghost-btn,
+  .search-panel button {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .agent-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .agent-badges {
+    justify-content: flex-start;
+  }
+
+  .transaction-field {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .transaction-label {
+    min-width: auto;
+  }
+}

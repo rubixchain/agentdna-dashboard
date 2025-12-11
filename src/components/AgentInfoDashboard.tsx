@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { NFTChainData, MetricCard } from "../types";
 import "./AgentInfoDashboard.css";
 
@@ -74,7 +75,12 @@ const AgentInfoDashboard = ({
   chainData,
   isLoading,
 }: AgentInfoDashboardProps) => {
-  
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   /* -----------------------------------------
      Compute metrics from filtered blocks
   ------------------------------------------ */
@@ -117,8 +123,21 @@ const AgentInfoDashboard = ({
       {/* ---------------- HEADER ---------------- */}
       <header className="hero agentinfo-header">
   <h1 className="agentinfo-title">Agent Profile</h1>
-  <p className="agentinfo-id">{selectedAgentName}</p>
+
+  {/* Only show if name exists */}
+  {selectedAgentName && (
+    <p className="agentinfo-id">
+      {isMobile
+        ? // MOBILE → trim to 5 chars
+          selectedAgentName.substring(0, 15) +
+          (selectedAgentName.length > 15 ? "..." : "")
+        : // DESKTOP → show full
+          selectedAgentName}
+    </p>
+  )}
 </header>
+
+
       {/* ---------------- METRICS ---------------- */}
       <div className="metrics-grid">
         {metrics.map((metric, index) => (
