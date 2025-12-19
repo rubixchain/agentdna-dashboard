@@ -21,10 +21,10 @@
     transition: 0.2s ease;
   }
   
-  .back-btn:hover {
+  /* .back-btn:hover {
     border-color: rgba(69,255,232,0.5);
     color: #45ffe8;
-  }
+  } */
   
   .email-search-title {
     text-align: center;
@@ -50,18 +50,8 @@
     gap: 1rem;
   }
   
-  .agent-list-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem;
-    border-radius: 16px;
-    border: 1px solid rgba(69,255,232,0.25);
-    background: linear-gradient(135deg, rgba(5, 15, 30, 0.6), rgba(10, 25, 45, 0.5));
-    cursor: pointer;
-    transition: 0.2s ease;
-  }
-  
+ 
+ 
   .agent-item-number {
     width: 40px;
     height: 40px;
@@ -143,3 +133,49 @@
     display: flex;
     justify-content: center;    /* centers text horizontally */
   }
+
+  .transaction-collapsible {
+  cursor: pointer;
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.transaction-status {
+  font-weight: 600;
+}
+
+.transaction-agent {
+  opacity: 0.9;
+  font-size: 0.85rem;
+  text-align: center;
+  flex: 1;
+}
+
+.transaction-time {
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+.transaction-expanded {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.center-muted {
+  padding: 2rem;
+  text-align: center;
+  opacity: 0.6;
+}

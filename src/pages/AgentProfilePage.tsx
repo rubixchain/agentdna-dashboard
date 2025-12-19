@@ -93,6 +93,12 @@ const AgentProfilePage = () => {
   }
 
   return (
+      <>
+      <section className="hero">
+        <h1 className="hero-title">Agent Profile </h1>
+        <h2 className="hero-title-h2">{selectedAgentName}</h2>
+        <p className="hero-sub">View and manage agent details.</p>
+      </section>
     <AgentInfoDashboard
       selectedAgentName={selectedAgentName}
       onBackToDashboard={handleBackToDashboard}
@@ -102,6 +108,7 @@ const AgentProfilePage = () => {
       chainData={nftChainData}
       isLoading={isLoadingData}
     />
+    </>
   );
 };
 

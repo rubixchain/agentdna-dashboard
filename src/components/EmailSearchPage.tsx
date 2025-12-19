@@ -12,18 +12,6 @@ interface EmailSearchPageProps {
 const EmailSearchPage = ({ email, results, loading, onBack, onOpenNFT }: EmailSearchPageProps) => {
   return (
     <div className="email-search-container">
-
-      {/* HEADER */}
-        <button className="back-btn" onClick={onBack}>← Dashboard</button>
-
-        <div className="email-info-title">
-  <header className="hero email-header">
-    <p className="eyebrow">
-      Agents By <span className="email-small">"{email}"</span>
-    </p>
-  </header>
-</div>
-
       {/* RESULTS SECTION */}
       <div className="agents-list-section">
         {loading ? (

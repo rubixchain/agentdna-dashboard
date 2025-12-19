@@ -10,6 +10,23 @@ interface MainDashboardProps {
   onSearchChange: (value: string) => void;
   isLoading: boolean;
 }
+const cards = [
+  {
+    title: "Secured Agents",
+    description: "Number of agents secured with AgentDNA",
+    data: 121,
+  },
+  {
+    title: "Intrusions Detected",
+    description: "Total number of intrusion attempts detected",
+    data: 15,
+  },
+  {
+    title: "Total Interactions ",
+    description: "Total number of interactions between agents",
+    data: 3421,
+  },
+];
 
 const MainDashboard = ({
   agents,
@@ -60,7 +77,8 @@ const MainDashboard = ({
           const bad =
             parsed?.verification?.status === "failed" ||
             (parsed?.verification?.trust_issues?.length ?? 0) > 0 ||
-            (parsed?.responses?.[0]?.envelope?.host_trust_issues?.length ?? 0) > 0;
+            (parsed?.responses?.[0]?.envelope?.host_trust_issues?.length ?? 0) >
+              0;
 
           if (bad) intrusions++;
         } catch {}
@@ -85,7 +103,7 @@ const MainDashboard = ({
 
   return (
     <div className="main-dashboard">
-      {/* SEARCH BAR */}
+      
       <form className="main-search-form" onSubmit={handleSearchSubmit}>
         <input
           type="text"
@@ -96,12 +114,35 @@ const MainDashboard = ({
         />
       </form>
 
+
       {/* METRICS */}
-      <div className="main-metrics-grid">
-        <MetricCard label="Agents Secured" value={metricsData.agentsSecured} />
-        <MetricCard label="Total Interactions" value={metricsData.totalInteractions} />
-        <MetricCard label="Intrusions Detected" value={metricsData.intrusions} color="#ff6c89" />
-      </div>
+      <section className="hub">
+        <div className="hub-grid">
+          <a className="card center card-link">
+            <div className="card-body">
+              <h3>{cards[0].title}</h3>
+              <p>{cards[0].description}</p>
+              <h2>{metricsData.agentsSecured}</h2>
+            </div>
+          </a>
+
+          <a className="card center card-link">
+            <div className="card-body">
+              <h3>{cards[1].title}</h3>
+              <p>{cards[1].description}</p>
+              <h2>{metricsData.intrusions}</h2>
+            </div>
+          </a>
+
+          <a className="card center card-link">
+            <div className="card-body">
+              <h3>{cards[2].title}</h3>
+              <p>{cards[2].description}</p>
+              <h2>{metricsData.totalInteractions}</h2>
+            </div>
+          </a>
+        </div>
+      </section>
 
       {/* AGENT LIST */}
       <div className="agents-list-section">
@@ -189,8 +230,6 @@ const AgentListItem = ({ agent, index, onClick }: AgentListItemProps) => {
         <div className="agent-item-label">Agent Name</div>
         <div className="agent-item-id">{displayName}</div>
       </div>
-
-
     </div>
   );
 };
