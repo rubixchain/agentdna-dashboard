@@ -67,6 +67,7 @@ const DashboardPage = () => {
     <>
       <section className="hero">
         <h1 className="hero-title">AgentDNA Dashboard</h1>
+        <p className="hero-sub">Monitor and manage your autonomous agents securely.</p>
 
       </section>
 
