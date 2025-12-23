@@ -4,6 +4,24 @@ import EmailSearchPageComponent from "../components/EmailSearchPage";
 import type { NFTRecord } from "../types";
 
 const EmailSearchPage = () => {
+  const cards = [
+    {
+      title: "Total Agents Interacted",
+      description: "Number of agents interacted with your application",
+      data: 121,
+    },
+    {
+      title: "Intrusions Detected",
+      description: "Total number of intrusion attempts detected",
+      data: 15,
+    },
+    {
+      title: "Total Interactions ",
+      description: "Total number of interactions between agents",
+      data: 3421,
+    },
+  ];
+
   const { email } = useParams<{ email: string }>();
   const navigate = useNavigate();
   const [emailSearchList, setEmailSearchList] = useState<NFTRecord[]>([]);
@@ -23,7 +41,9 @@ const EmailSearchPage = () => {
 
       try {
         const res = await fetch(
-          `https://chain-connector-1.rubix.net/get-nft-by-email?email=${encodeURIComponent(decodedEmail)}`
+          `https://chain-connector-1.rubix.net/get-nft-by-email?email=${encodeURIComponent(
+            decodedEmail
+          )}`
         );
 
         const data = await res.json();
@@ -73,15 +93,51 @@ const EmailSearchPage = () => {
   }
 
   return (
-    <EmailSearchPageComponent
-      email={decodeURIComponent(email)}
-      onBack={handleBack}
-      results={emailSearchList}
-      loading={isLoadingEmail}
-      onOpenNFT={handleOpenNFT}
-    />
+    <>
+      <section className="hero">
+        <h1 className="hero-title">Agents Under</h1>
+        <h2 className="hero-title-h2">{decodeURIComponent(email)}</h2>
+        <p className="hero-sub">
+          Monitor and manage your autonomous agents securely.
+        </p>
+
+        {/* <section className="hub">
+        <div className="hub-grid">
+          <a className="card center card-link">
+            <div className="card-body">
+              <h3>{cards[0].title}</h3>
+              <p>{cards[0].description}</p>
+              <h2>{cards[0].data}</h2>
+            </div>
+          </a>
+
+          <a className="card center card-link">
+            <div className="card-body">
+              <h3>{cards[1].title}</h3>
+              <p>{cards[1].description}</p>
+              <h2>{cards[1].data}</h2>
+            </div>
+          </a>
+
+          <a className="card center card-link">
+            <div className="card-body">
+              <h3>{cards[2].title}</h3>
+              <p>{cards[2].description}</p>
+              <h2>{cards[2].data}</h2>
+            </div>
+          </a>
+        </div>
+      </section> */}
+      </section>
+      <EmailSearchPageComponent
+        email={decodeURIComponent(email)}
+        onBack={handleBack}
+        results={emailSearchList}
+        loading={isLoadingEmail}
+        onOpenNFT={handleOpenNFT}
+      />
+    </>
   );
 };
 
 export default EmailSearchPage;
-

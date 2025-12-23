@@ -65,9 +65,11 @@ const DashboardPage = () => {
 
   return (
     <>
-      <header className="hero" style={{ display: "flex", justifyContent: "center" }}>
-        <p className="eyebrow">AgentDNA Dashboard</p>
-      </header>
+      <section className="hero">
+        <h1 className="hero-title">AgentDNA Dashboard</h1>
+        <p className="hero-sub">Monitor and manage your autonomous agents securely.</p>
+
+      </section>
 
       <MainDashboard
         agents={nftList}
