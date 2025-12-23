@@ -6,7 +6,6 @@ It provides deep visibility into agent interactions, communication history, and 
 Clone the repo
 Install the dependencies 
 ```npm i ```
-Add the env config
 
 Run in the dev mode 
 ```npm run dev```
